@@ -25,9 +25,9 @@ func (s *FormatService) Format(text string) entity.Response {
 	for i, c := range chains {
 		log.Println(i, c)
 	}
-	envs := []string{chains[4], chains[5], chains[6], chains[10], chains[11], chains[12], chains[13]}
+	envs := []string{chains[3], chains[4], chains[5], chains[10], chains[11], chains[12], chains[13]}
 	mapEnv := getEnv(envs)
-	kvsName := strings.Replace(strings.Split(chains[3], ":")[1], " ", "", 1)
+	kvsName := strings.Replace(strings.Split(chains[2], ":")[1], " ", "", 1)
 	dsName := strings.Replace(strings.Split(chains[9], ":")[1], " ", "", 1)
 	s.response.NameServiceKvs = kvsName
 	s.response.NameServiceDs = dsName
