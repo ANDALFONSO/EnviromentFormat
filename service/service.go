@@ -31,8 +31,6 @@ func (s *FormatService) Format(text string) entity.Response {
 	dsName := strings.Replace(strings.Split(chains[9], ":")[1], " ", "", 1)
 	s.response.NameServiceKvs = kvsName
 	s.response.NameServiceDs = dsName
-	s.response.SCOPE = "local"
-	s.response.GO_ENVIRONMENT = "production"
 	s.response.Vscode = mapEnv
 	s.response.Golang = mapToString(mapEnv)
 	return s.response
@@ -46,6 +44,11 @@ func getEnv(envs []string) map[string]string {
 		chains[1] = strings.Replace(chains[1], ":", "", 1)
 		m[chains[1]] = chains[2]
 	}
+	m["SCOPE"] = "local"
+	m["GO_ENVIRONMENT"] = "production"
+	m["CONF_DIR"] = "${workspaceRoot}/conf"
+	m["configFileName"] = "${workspaceRoot}/pkg/config/application.properties"
+	m["checksumEnabled"] = "false"
 	return m
 }
 
