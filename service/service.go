@@ -31,6 +31,8 @@ func (s *FormatService) Format(text string) entity.Response {
 	dsName := strings.Replace(strings.Split(chains[9], ":")[1], " ", "", 1)
 	s.response.NameServiceKvs = kvsName
 	s.response.NameServiceDs = dsName
+	s.response.SCOPE = "local"
+	s.response.GO_ENVIRONMENT = "production"
 	s.response.Vscode = mapEnv
 	s.response.Golang = mapToString(mapEnv)
 	return s.response
