@@ -49,11 +49,8 @@ func getEnv(envs []string) map[string]string {
 	m["CONF_DIR"] = "${workspaceRoot}/conf"
 	m["configFileName"] = "${workspaceRoot}/pkg/config/application.properties"
 	m["checksumEnabled"] = "false"
-<<<<<<< HEAD
 	m["NEW_RELIC_LICENSE_KEY"] = "1111111111111111111111111111111111111111"
 	m["NEW_RELIC_APP_NAME"] = "wdm-api"
-=======
->>>>>>> parent of 23059cc (update wh)
 	return m
 }
 
