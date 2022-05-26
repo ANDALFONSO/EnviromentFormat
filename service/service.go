@@ -51,6 +51,7 @@ func getEnv(envs []string) map[string]string {
 	m["checksumEnabled"] = "false"
 	m["NEW_RELIC_LICENSE_KEY"] = "1111111111111111111111111111111111111111"
 	m["NEW_RELIC_APP_NAME"] = "wdm-api"
+	m["CACHE_TESTWDM_NODES_ENDPOINT"] = "localhost:11211"
 	return m
 }
 
