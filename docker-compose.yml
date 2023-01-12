@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  api:
+    container_name:  "environment-api"
+    #image: christianphp/golang-api-restful:1.0.5
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app/
+
+networks:
+  default:
